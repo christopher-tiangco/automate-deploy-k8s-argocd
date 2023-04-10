@@ -28,3 +28,8 @@ argo_cd_host = "the hostname to access ArgoCD (e.g. argocd.example.com) "
 terraform init
 terraform apply -var-file="inputs.tfvars"
 ```
+
+- To login using ArgoCD initial password, run the following in the command line:
+```
+kubectl -n argo-cd get secret argocd-initial-admin-secret -o jsonpath={.data.password} | base64 -d; echo
+```
