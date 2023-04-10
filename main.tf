@@ -22,7 +22,7 @@ resource "kubernetes_ingress_v1" "argo_cd_server_ingress" {
   spec {
     tls {
       hosts       = [var.argo_cd_host]
-      secret_name = "argocd-sercret"
+      secret_name = "argocd-secret"
     }
     rule {
       host = var.argo_cd_host
